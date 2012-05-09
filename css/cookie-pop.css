@@ -1,0 +1,44 @@
+/* Cookie Pop */
+
+#CookiePop{
+  background:#eee;
+  border:1px #ccc solid;
+  width:50%;
+  margin:20px auto;
+  padding:20px;
+  font:normal 12px/1.4 Arial, Helvetica;
+  position:relative;
+  z-index: 2;
+}
+
+#CookiePop p{margin:0 0 15px 0;}
+#CookiePop h2{font:bold 16px/1.4 Arial, Helvetica; margin:0 0 10px 0;}
+
+.cookieInfo{
+  background:#fff;
+  height:200px;
+  overflow:auto;
+  margin:0 0 20px 0;
+}
+
+#CookiePop table{ text-align:left; width:100%;}
+#CookiePop .cookieHead{background:#ddd;}
+#CookiePop table th, #CookiePop table td{padding:10px 20px; vertical-align:top; text-align:left;}
+
+#CookiePop button{ background:#aaa; border:1px #999 solid; border-radius:10px; padding:5px 10px; margin-right:10px;}
+
+/* Overlay */
+
+#CookieOverlay{
+  background:#000; 
+  opacity:0.6; 
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter:alpha(opacity=60);
+  position:fixed; 
+  width:100%; 
+  height:100%; 
+  top:0; 
+  left:0;
+  z-index: 1; 
+  display:none;
+}
