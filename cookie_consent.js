@@ -80,7 +80,6 @@ CookieConsent.prototype = {
 
      if (mygetrequest.status==200 || window.location.href.indexOf("http")==-1){
 
-
       self.cookiePrompt.setAttribute('id',"CookiePop");
 
       self.body.appendChild(self.cookiePrompt);
@@ -100,8 +99,7 @@ CookieConsent.prototype = {
       
       self.handlers.registerEventHandler(button_positive, "click", function(e){
       
-        // Add Cookie to remmeber this option
-      
+        // Add Cookie to remmeber this option      
         self.cookies.createCookie('euCookie',true,30);
         self.detachCookiePopup("Yes");
         e.preventDefault();
@@ -115,26 +113,21 @@ CookieConsent.prototype = {
        self.handlers.registerEventHandler(button_negative, "click", function(e){
        
          // Add Cookie to remmeber this option
-
          self.cookies.createCookie('euCookie',true,30);
          self.detachCookiePopup("No");
          return false;
 
        });
-
      
        /**
         * Add Click Handler : Consent : No, Do not store any cookies
         */
 
-       self.handlers.registerEventHandler(button_negative_remember, "click", function(e){
-       
+       self.handlers.registerEventHandler(button_negative_remember, "click", function(e){       
          // Delete Existing Cookie
-
          self.cookies.eraseCookie('euCookie');       
          self.detachCookiePopup("Never");         
          e.preventDefault();
-
        });
               
 
@@ -236,15 +229,16 @@ CookieConsent.prototype = {
 
 window.onload = function(){
   
-  var cookie_consent = new CookieConsent(helper);
-  
-  // Callback Function
-  function helper(){
-    var _result = Array.prototype.slice.apply(arguments)[0];
-    
-  }
+  var cookie_consent = new CookieConsent(helper);  
   
 };
 
 
 })(this);
+
+// Callback Function
+
+function helper(){
+  var _result = Array.prototype.slice.apply(arguments)[0];
+  console.log(_result);
+}
